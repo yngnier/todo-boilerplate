@@ -1,11 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TodoList from "../components/TodoList";
 import TodoInput from "../components/TodoInput";
-
-import { GoCheck } from "react-icons/go";
-import { RiCloseCircleLine } from "react-icons/ri";
-import { TiEdit } from "react-icons/ti";
-import { Link } from "react-router-dom";
 
 const Title = (
   <header>
@@ -37,7 +32,7 @@ const Home = () => {
   };
 
   const deleteTodo = (id) => {
-    console.log(`id ${id}`)
+    console.log(`id ${id}`);
     const newList = todoList.filter((todo) => todo.id !== id);
     setTodoList(newList);
   };
@@ -47,7 +42,7 @@ const Home = () => {
       <div className="todo">
         {/* START: header */}
         {Title}
-        <TodoInput addTodo={addTodo} todoList={todoList}/>
+        <TodoInput addTodo={addTodo} todoList={todoList} />
         <TodoList
           todoList={todoList}
           toggleCompleteStatus={toggleCompleteStatus}

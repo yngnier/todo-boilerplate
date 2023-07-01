@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "msw": "^1.2.2",
     "node-sass": "npm:sass"
   }
 }

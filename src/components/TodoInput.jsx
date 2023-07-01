@@ -7,12 +7,10 @@ const TodoInput = ({ addTodo, todoList }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(`최종 엔터값 ${finalInput}`);
-    //! 빈값이 오면 서밋이 안되게해라
-
     const trimed = inputValue.trim();
-    
+
     if (trimed === "") {
+      //! 빈값이 오면 서밋이 안되게해라
       return;
     }
 
@@ -20,13 +18,6 @@ const TodoInput = ({ addTodo, todoList }) => {
       alert("중복된 투두가 있습니다.");
       return;
     }
-    // console.log(Boolean(todoList.filter((todo) => todo.text === inputValue)));
-    // console.log(todoList.filter((todo) => todo.text === inputValue).length);
-    // const a = todoList.filter((todo) => todo.text === inputValue);
-    // if (todoList.filter((todo) => todo.text !== inputValue)) {
-    //   alert("중복된 아이템이 있습니다.")
-    //   return;
-    // }
 
     const newItem = {
       id: Date.now(),

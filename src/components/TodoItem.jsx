@@ -16,6 +16,10 @@ const TodoItem = ({ todo, toggleCompleteStatus, deleteTodo }) => {
     deleteTodo(id);
   };
 
+  const handleEdit = (e) => {
+    alert("HandleEdit");
+  };
+
   return (
     <li className="todo__item">
       {/* <div className='todo__content complete'> */}
@@ -29,10 +33,17 @@ const TodoItem = ({ todo, toggleCompleteStatus, deleteTodo }) => {
           </label>
         </div>
         <div className="todo__item-buttonarea">
-          <Link to={`/`} className="todo__item-button">
-            <TiEdit className="todo__item-button-icon update" />
+          <Link to={`/edit`} className="todo__item-button">
+            <TiEdit
+              className="todo__item-button-icon update"
+              onClick={handleEdit}
+            />
           </Link>
-          <button type="button" className="todo__item-button" onClick={handleDelete}>
+          <button
+            type="button"
+            className="todo__item-button"
+            onClick={handleDelete}
+          >
             <RiCloseCircleLine className="todo__item-button-icon delete" />
           </button>
         </div>
